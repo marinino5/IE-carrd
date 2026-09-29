@@ -3,18 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#f5f1f9">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <title>Imagen Eléctrica | Tarjeta digital</title>
 
-    <meta name="description" content="Imagen Eléctrica Ltda. Soluciones eléctricas e industriales con más de 25 años de experiencia en Bucaramanga.">
-    <meta name="theme-color" content="#2d0838">
+    <meta name="description" content="Imagen Eléctrica Ltda. Soluciones eléctricas e industriales con más de 25 años de trayectoria en Bucaramanga.">
 
-    <!-- Vista previa al compartir el enlace (WhatsApp, redes).
-         Cuando tengas el dominio, cambia og:image por la URL COMPLETA de la imagen. -->
+    <!-- Cuando tengas el dominio, pon aquí la URL COMPLETA de la imagen -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Imagen Eléctrica | Soluciones eléctricas para la industria">
-    <meta property="og:description" content="Más de 25 años de experiencia en soluciones eléctricas e industriales. Bucaramanga, Colombia.">
+    <meta property="og:description" content="Más de 25 años de trayectoria en soluciones eléctricas e industriales. Bucaramanga, Colombia.">
     <meta property="og:image" content="images/empresa/ALMACEN.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,6 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Activa las animaciones solo si JavaScript funciona (si falla, todo queda visible) -->
     <script>document.documentElement.classList.add('js');</script>
 </head>
 
@@ -35,105 +33,107 @@
 
         <!-- =========================================
              PORTADA
+             Foto completa (sin recorte) y texto debajo,
+             así el letrero se lee entero y nada lo tapa.
         ========================================== -->
         <header class="hero">
 
-            <img
-                class="hero__img"
-                src="images/empresa/ALMACEN.png"
-                alt="Fachada del almacén Imagen Eléctrica en Bucaramanga"
-                width="1200"
-                height="800"
-                fetchpriority="high"
-            >
+            <figure class="hero__media">
+                <img
+                    src="images/empresa/ALMACEN.png"
+                    alt="Fachada del almacén Imagen Eléctrica en Bucaramanga"
+                    width="1200"
+                    height="750"
+                    fetchpriority="high"
+                >
+            </figure>
 
-            <div class="hero__shade" aria-hidden="true"></div>
-
-            <div class="hero__bottom">
-
-                <div class="hero__content">
-                    <p class="eyebrow eyebrow--light">Imagen Eléctrica Ltda.</p>
-
-                    <h1 class="hero__title">
-                        Soluciones eléctricas
-                        <span>para la industria.</span>
-                    </h1>
-
-                    <p class="hero__lead">
-                        Experiencia y respaldo para empresas, proyectos y procesos industriales.
-                    </p>
-                </div>
+            <div class="hero__body">
 
                 <div class="hero__seal" aria-label="Más de 25 años de trayectoria">
-                    <strong class="hero__seal-num">25<small>+</small></strong>
-                    <span class="hero__seal-label">años</span>
+                    <strong>25<small>+</small></strong>
+                    <span>años</span>
                 </div>
 
+                <h1 class="hero__title">
+                    Soluciones eléctricas
+                    <span>para la industria</span>
+                </h1>
+                <p class="hero__lead">
+                    Empresa colombiana especializada en soluciones eléctricas y de automatización.
+                    Proveemos equipos de alta eficiencia energética y acompañamiento técnico
+                    para llevar tu producción al siguiente nivel.
+                </p>
             </div>
 
         </header>
 
 
         <!-- =========================================
-             NUESTRA EMPRESA
+             CINTA DE MARCAS (se mueve sola, sentido contrario)
         ========================================== -->
-        <section class="block about reveal" aria-labelledby="about-title">
-
-            <p class="eyebrow">Nuestra empresa</p>
-
-            <h2 id="about-title" class="title">
-                Experiencia construida
-                <span>al lado de la industria.</span>
-            </h2>
-
-            <p class="text">
-                Somos una empresa colombiana con más de 25 años de trayectoria,
-                dedicada a soluciones eléctricas e industriales.
-            </p>
-
-        </section>
+        <div class="ticker" data-marquee>
+            <p class="sr-only">Marcas: WEG, Nexans, Sylvania, Cestari, Soler &amp; Palau y AIRAL.</p>
+            <ul class="ticker__track" data-marquee-track data-speed="30" aria-hidden="true">
+                <li class="ticker__item">WEG<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">Nexans<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">Sylvania<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">Cestari<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">Soler &amp; Palau<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">AIRAL<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+            </ul>
+        </div>
 
 
         <!-- =========================================
              NUESTRO VALOR
         ========================================== -->
-        <section class="block values reveal" aria-labelledby="values-title">
+        <section class="section reveal" aria-labelledby="values-title">
 
-            <p class="eyebrow">Nuestro valor</p>
+            <div class="head">
+                <p class="label">Nuestro valor</p>
+                <h2 id="values-title" class="title">Lo que nos <span>diferencia</span></h2>
+            </div>
 
-            <h2 id="values-title" class="title">Lo que nos diferencia</h2>
+            <div class="values">
 
-            <div class="values__grid">
-
-                <article class="value reveal-item" style="--d: 0s">
-                    <div class="value__icon" aria-hidden="true">
+                <article class="value" data-tilt>
+                    <span class="deco-arc" aria-hidden="true"></span>
+                    <span class="deco-dots" aria-hidden="true"></span>
+                    <span class="value__icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
                             <path d="M7 9a5 5 0 0 1 10 0v2a5 5 0 0 1-10 0Z" />
                             <path d="M5 21a7 7 0 0 1 14 0" />
                             <path d="M18 6h3v4h-2l-2 2" />
                         </svg>
-                    </div>
+                    </span>
                     <h3>Asesoría experta</h3>
                     <p>La solución adecuada para cada necesidad.</p>
                 </article>
 
-                <article class="value reveal-item" style="--d: .09s">
-                    <div class="value__icon" aria-hidden="true">
+                <article class="value" data-tilt>
+                    <span class="deco-arc" aria-hidden="true"></span>
+                    <span class="deco-dots" aria-hidden="true"></span>
+                    <span class="value__icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 2 15 5l4-.2-.2 4L22 12l-3.2 3.2.2 4-4-.2L12 22l-3-3-4 .2.2-4L2 12l3.2-3.2-.2-4 4 .2Z" />
-                            <path d="m9 12 2 2 4-4" />
+                            <rect x="4" y="4" width="7" height="7" rx="1.5" />
+                            <rect x="13" y="4" width="7" height="7" rx="1.5" />
+                            <rect x="4" y="13" width="7" height="7" rx="1.5" />
+                            <rect x="13" y="13" width="7" height="7" rx="1.5" />
                         </svg>
-                    </div>
-                    <h3>Respaldo y trayectoria</h3>
-                    <p>Más de dos décadas en el sector.</p>
+                    </span>
+                    <h3>Amplio portafolio</h3>
+                    <p>Motores, control, ventilación, iluminación y más.</p>
                 </article>
 
-                <article class="value reveal-item" style="--d: .18s">
-                    <div class="value__icon" aria-hidden="true">
+                <article class="value" data-tilt>
+                    <span class="deco-arc" aria-hidden="true"></span>
+                    <span class="deco-dots" aria-hidden="true"></span>
+                    <span class="value__icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
                             <path d="M8 7h8a4 4 0 0 1 4 4v2a4 4 0 0 1-4 4h-3l-4 3v-3H8a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4Z" />
                         </svg>
-                    </div>
+                    </span>
                     <h3>Atención cercana</h3>
                     <p>Comunicación directa en cada requerimiento.</p>
                 </article>
@@ -144,161 +144,112 @@
 
 
         <!-- =========================================
-             CARRUSEL DE PRODUCTOS
+             PRODUCTOS: fila continua que se desplaza sola
         ========================================== -->
-        <section class="block products reveal" aria-labelledby="products-title">
+        <section class="section reveal" aria-labelledby="products-title">
 
-            <div class="products__head">
-                <p class="eyebrow">Soluciones destacadas</p>
+            <div class="head">
+                <p class="label">Soluciones destacadas</p>
                 <h2 id="products-title" class="title">
-                    Equipos para distintas
-                    <span>necesidades industriales.</span>
+                    Equipos para
+                    <span>cada industria</span>
                 </h2>
             </div>
 
-            <!-- IMPORTANTE: los nombres de archivo deben coincidir EXACTAMENTE
+            <!-- Los nombres de archivo deben coincidir EXACTAMENTE
                  (mayúsculas y extensión) con los de images/productos/ -->
-            <ul class="carousel__track" data-carousel-track tabindex="0" aria-label="Productos destacados, desliza para ver más">
+            <div class="marquee" data-marquee>
+                <ul class="marquee__track" data-marquee-track>
 
-                <li class="product">
-                    <figure class="product__media" data-fallback="Motorreductores">
-                        <img src="images/productos/CREDUCTOR.png" alt="Motorreductor Cestari" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
-                    </figure>
-                    <div class="product__info">
-                        <h3 class="product__name">Motorreductores</h3>
-                        <span class="product__brand">Cestari</span>
-                    </div>
-                </li>
+                    <li class="item">
+                        <figure class="item__img" data-fallback="Motorreductores">
+                            <img src="images/productos/CREDUCTOR.png" alt="Motorreductor Cestari" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
+                        </figure>
+                        <h3 class="item__name">Motorreductores</h3>
+                        <span class="item__brand">Cestari</span>
+                    </li>
 
-                <li class="product">
-                    <figure class="product__media" data-fallback="Motores">
-                        <img src="images/productos/CMOTOR.png" alt="Motor eléctrico WEG" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
-                    </figure>
-                    <div class="product__info">
-                        <h3 class="product__name">Motores eléctricos</h3>
-                        <span class="product__brand">WEG</span>
-                    </div>
-                </li>
+                    <li class="item">
+                        <figure class="item__img" data-fallback="Motores">
+                            <img src="images/productos/CMOTOR.png" alt="Motor eléctrico WEG" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
+                        </figure>
+                        <h3 class="item__name">Motores eléctricos</h3>
+                        <span class="item__brand">WEG</span>
+                    </li>
 
-                <li class="product">
-                    <figure class="product__media" data-fallback="Variadores">
-                        <img src="images/productos/CV&amp;A.png" alt="Variadores y arrancadores WEG" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
-                    </figure>
-                    <div class="product__info">
-                        <h3 class="product__name">Variadores y arrancadores</h3>
-                        <span class="product__brand">WEG</span>
-                    </div>
-                </li>
+                    <li class="item">
+                        <figure class="item__img" data-fallback="Variadores">
+                            <img src="images/productos/CV&amp;A.png" alt="Variadores y arrancadores WEG" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
+                        </figure>
+                        <h3 class="item__name">Variadores y arrancadores</h3>
+                        <span class="item__brand">WEG</span>
+                    </li>
 
-                <li class="product">
-                    <figure class="product__media" data-fallback="Ventilación">
-                        <img src="images/productos/CVENT.png" alt="Equipo de ventilación industrial" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
-                    </figure>
-                    <div class="product__info">
-                        <h3 class="product__name">Ventilación industrial</h3>
-                        <span class="product__brand">Soler &amp; Palau / AIRAL</span>
-                    </div>
-                </li>
+                    <li class="item">
+                        <figure class="item__img" data-fallback="Ventilación">
+                            <img src="images/productos/CVENT.png" alt="Ventilación industrial" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
+                        </figure>
+                        <h3 class="item__name">Ventilación industrial</h3>
+                        <span class="item__brand">Soler &amp; Palau / AIRAL</span>
+                    </li>
 
-                <li class="product">
-                    <figure class="product__media" data-fallback="Iluminación">
-                        <img src="images/productos/CILUM.png" alt="Iluminación industrial Sylvania" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
-                    </figure>
-                    <div class="product__info">
-                        <h3 class="product__name">Iluminación industrial</h3>
-                        <span class="product__brand">Sylvania</span>
-                    </div>
-                </li>
+                    <li class="item">
+                        <figure class="item__img" data-fallback="Iluminación">
+                            <img src="images/productos/CILUM.png" alt="Iluminación industrial Sylvania" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
+                        </figure>
+                        <h3 class="item__name">Iluminación industrial</h3>
+                        <span class="item__brand">Sylvania</span>
+                    </li>
 
-                <li class="product">
-                    <figure class="product__media" data-fallback="Cables">
-                        <img src="images/productos/CCABLE.png" alt="Cables industriales Nexans" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
-                    </figure>
-                    <div class="product__info">
-                        <h3 class="product__name">Cables industriales</h3>
-                        <span class="product__brand">Nexans</span>
-                    </div>
-                </li>
+                    <li class="item">
+                        <figure class="item__img" data-fallback="Cables">
+                            <img src="images/productos/CCABLE.png" alt="Cables industriales Nexans" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
+                        </figure>
+                        <h3 class="item__name">Cables industriales</h3>
+                        <span class="item__brand">Nexans</span>
+                    </li>
 
-                <li class="product">
-                    <figure class="product__media" data-fallback="Compresores">
-                        <img src="images/productos/CCOMPRESOR.png" alt="Compresor industrial" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
-                    </figure>
-                    <div class="product__info">
-                        <h3 class="product__name">Compresores</h3>
-                        <!-- Agrega aquí la marca cuando la definan:
-                             <span class="product__brand">Marca</span> -->
-                    </div>
-                </li>
+                    <li class="item">
+                        <figure class="item__img" data-fallback="Compresores">
+                            <img src="images/productos/CCOMPRESOR.png" alt="Compresor industrial" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
+                        </figure>
+                        <h3 class="item__name">Compresores</h3>
+                        <!-- <span class="item__brand">Marca</span> -->
+                    </li>
 
-            </ul>
-
-            <div class="carousel__foot">
-
-                <div class="carousel__progress" aria-hidden="true">
-                    <span data-carousel-bar></span>
-                </div>
-
-                <div class="carousel__nav">
-                    <button class="carousel__btn" type="button" data-carousel-prev aria-label="Ver productos anteriores">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-                    </button>
-                    <button class="carousel__btn" type="button" data-carousel-next aria-label="Ver más productos">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
-                    </button>
-                </div>
-
+                </ul>
             </div>
+
+            <a class="catalog-btn ripple" href="catalogo.html">
+                <span class="deco-dots" aria-hidden="true"></span>
+                <span>
+                    <small>¿Buscas más referencias?</small>
+                    <strong>Explorar catálogo digital</strong>
+                </span>
+                <span class="catalog-btn__arrow" aria-hidden="true">→</span>
+            </a>
 
         </section>
 
 
         <!-- =========================================
-             FRANJA DE CATÁLOGO (siempre visible)
+             CONTACTO (panel morado dentro de la tarjeta)
         ========================================== -->
-        <aside class="catalog reveal" aria-label="Catálogo digital">
+        <section class="contact reveal" aria-labelledby="contact-title">
 
-            <div class="catalog__row">
-                <div class="catalog__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="4" y="4" width="7" height="7" rx="1.5" />
-                        <rect x="13" y="4" width="7" height="7" rx="1.5" />
-                        <rect x="4" y="13" width="7" height="7" rx="1.5" />
-                        <rect x="13" y="13" width="7" height="7" rx="1.5" />
-                    </svg>
-                </div>
-                <div>
-                    <p class="catalog__title">¿Buscas más referencias?</p>
-                    <p class="catalog__text">Consulta nuestras líneas, marcas y soluciones.</p>
-                </div>
+            <span class="deco-arc" aria-hidden="true"></span>
+            <span class="deco-dots" aria-hidden="true"></span>
+
+            <div class="head head--light">
+                <p class="label">Conversemos</p>
+                <h2 id="contact-title" class="title">
+                    Hablemos de
+                    <span>tu proyecto</span>
+                </h2>
             </div>
 
-            <a class="catalog__btn" href="catalogo.html">
-                Explorar catálogo digital
-                <span aria-hidden="true">→</span>
-            </a>
-
-        </aside>
-
-
-        <!-- =========================================
-             CTA
-        ========================================== -->
-        <section class="cta" aria-labelledby="cta-title">
-
-            <p class="eyebrow eyebrow--light">Conversemos</p>
-
-            <h2 id="cta-title" class="cta__title">
-                Hablemos de
-                <span>tu proyecto.</span>
-            </h2>
-
-            <p class="cta__text">
-                Cuéntanos qué necesitas y te orientamos con la solución adecuada.
-            </p>
-
             <a
-                class="wa-btn"
+                class="wa-btn ripple"
                 href="https://wa.me/573168219758?text=Hola%2C%20conoc%C3%AD%20a%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20para%20mi%20proyecto."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -309,21 +260,39 @@
                         <path d="M9 8.5c.5 2.5 2 4 4.5 5" />
                     </svg>
                 </span>
-
                 <span class="wa-btn__text">
-                    <small>+57 316 821 9758</small>
+                    <small>Respuesta directa</small>
                     <strong>Hablar por WhatsApp</strong>
                 </span>
-
                 <span class="wa-btn__arrow" aria-hidden="true">→</span>
             </a>
 
-            <nav class="cta__links" aria-label="Otros canales">
-                <a href="https://imagenelectrica.com/" target="_blank" rel="noopener noreferrer">Sitio web</a>
-                <span aria-hidden="true">·</span>
-                <a href="mailto:imagenelectrica@gmail.com">Correo</a>
-                <span aria-hidden="true">·</span>
-                <a href="https://www.instagram.com/imagenelectrica1824/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <ul class="copy-list">
+                <li class="copy-row">
+                    <div>
+                        <small>Correo</small>
+                        <strong>imagenelectrica@gmail.com</strong>
+                    </div>
+                    <button class="copy-btn" type="button" data-copy="imagenelectrica@gmail.com" data-copy-msg="Correo copiado" aria-label="Copiar correo">
+                        <svg class="icon-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" /><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8" /></svg>
+                        <svg class="icon-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+                    </button>
+                </li>
+            </ul>
+
+            <nav class="quick" aria-label="Accesos rápidos">
+                <a class="quick__item" href="https://www.google.com/maps/search/?api=1&amp;query=Imagen+El%C3%A9ctrica+Cra+18+No.+24-32+Bucaramanga" target="_blank" rel="noopener noreferrer" style="--d: 0s">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11s-7-6-7-11a7 7 0 1 1 14 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+                    <span>Ubicación</span>
+                </a>
+                <a class="quick__item" href="https://imagenelectrica.com/" target="_blank" rel="noopener noreferrer" style="--d: .08s">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.7 5.4 3.7 8.5s-1.2 5.9-3.7 8.5c-2.5-2.6-3.7-5.4-3.7-8.5S9.5 6.1 12 3.5Z" /></svg>
+                    <span>Sitio web</span>
+                </a>
+                <a class="quick__item" href="https://www.instagram.com/imagenelectrica1824/" target="_blank" rel="noopener noreferrer" style="--d: .16s">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" /><circle cx="12" cy="12" r="3.6" /><circle cx="16.8" cy="7.2" r=".6" /></svg>
+                    <span>Instagram</span>
+                </a>
             </nav>
 
         </section>
@@ -333,11 +302,36 @@
              FOOTER
         ========================================== -->
         <footer class="footer">
-            <p>© <span id="current-year">2026</span> Imagen Eléctrica Ltda. · Todos los derechos reservados.</p>
-            <p class="footer__addr">Cra 18 No. 24-32 · Bucaramanga, Colombia</p>
+            <p>© <span id="current-year">2026</span> Imagen Eléctrica Ltda.</p>
+            <p class="footer__sub">Todos los derechos reservados</p>
         </footer>
 
     </main>
+
+
+    <!-- QR flotante + modal -->
+    <button class="qr-fab ripple" type="button" data-qr-open aria-label="Mostrar el código QR de esta tarjeta">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="6" height="6" rx="1.2" />
+            <rect x="14" y="4" width="6" height="6" rx="1.2" />
+            <rect x="4" y="14" width="6" height="6" rx="1.2" />
+            <path d="M14 14h2v2h-2zM18 14h2M14 18v2M17 17h3v3h-3z" />
+        </svg>
+    </button>
+
+    <dialog class="qr-modal" data-qr-modal aria-labelledby="qr-title">
+        <div class="qr-modal__box">
+            <div class="head">
+                <p class="label">Comparte esta tarjeta</p>
+                <h2 id="qr-title" class="title">Escanea <span>el código</span></h2>
+            </div>
+            <div class="qr-modal__code" data-qr-code></div>
+            <p class="qr-modal__text">Apunta la cámara del celular para abrir la tarjeta de Imagen Eléctrica.</p>
+            <button class="qr-modal__close ripple" type="button" data-qr-close>Cerrar</button>
+        </div>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
 
     <script src="js/script.js"></script>
 
