@@ -234,3 +234,134 @@
         });
     }
 })();
+
+(() => {
+    'use strict';
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const $ = (sel, ctx = document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+
+    const fichas = $$('[data-ficha]');
+    if (!fichas.length) return;
+
+
+    /* ==========================================
+       FICHAS: solo una abierta a la vez
+    ========================================== */
+
+    const setOpen = (ficha, open) => {
+        const btn = $('[data-toggle]', ficha);
+        const label = $('[data-toggle-label]', ficha);
+        const panel = $('.ficha__panel', ficha);
+
+        ficha.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Ocultar detalles' : 'Ver detalles';
+
+        // un panel cerrado no se puede enfocar con teclado
+        if (open) panel.removeAttribute('inert');
+        else panel.setAttribute('inert', '');
+    };
+
+    const scrollToFicha = ficha => {
+        // espera a que la ficha anterior se cierre para calcular bien la posición
+        setTimeout(() => {
+            ficha.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        }, reduceMotion ? 0 : 260);
+    };
+
+    const openOnly = (id, { scroll = true } = {}) => {
+        const target = document.getElementById(id);
+        if (!target || !target.matches('[data-ficha]')) return;
+
+        fichas.forEach(f => setOpen(f, f === target));
+        history.replaceState(null, '', `#${id}`);
+        if (scroll) scrollToFicha(target);
+    };
+
+    fichas.forEach(ficha => {
+        $('[data-toggle]', ficha).addEventListener('click', () => {
+            const willOpen = !ficha.classList.contains('is-open');
+            if (willOpen) {
+                openOnly(ficha.id, { scroll: true });
+            } else {
+                setOpen(ficha, false);
+            }
+        });
+    });
+
+    // selector visual, barra de accesos y enlaces "Siguiente"
+    document.addEventListener('click', e => {
+        const link = e.target.closest('[data-open]');
+        if (!link) return;
+        e.preventDefault();
+        openOnly(link.dataset.open);
+    });
+
+    // si se llega con un enlace directo (catalogo.html#motores), abre esa ficha
+    if (location.hash) {
+        const id = location.hash.slice(1);
+        if (document.getElementById(id)?.matches('[data-ficha]')) {
+            openOnly(id, { scroll: false });
+            setTimeout(() => document.getElementById(id).scrollIntoView({ block: 'start' }), 60);
+        }
+    }
+
+
+    /* ==========================================
+       BARRA DE ACCESOS RÁPIDOS
+       Aparece cuando el selector de la portada ya no se ve,
+       y marca la línea que está en pantalla.
+    ========================================== */
+
+    const chipsBar = $('[data-chips]');
+    const selector = $('[data-selector]');
+    const closing = $('#cierre');
+
+    if (chipsBar && 'IntersectionObserver' in window) {
+        let selectorVisible = true;
+        let closingVisible = false;
+
+        const refresh = () => {
+            chipsBar.classList.toggle('is-visible', !selectorVisible && !closingVisible);
+        };
+
+        new IntersectionObserver(([entry]) => {
+            selectorVisible = entry.isIntersecting;
+            refresh();
+        }).observe(selector);
+
+        if (closing) {
+            new IntersectionObserver(([entry]) => {
+                closingVisible = entry.isIntersecting;
+                refresh();
+            }, { threshold: 0.3 }).observe(closing);
+        }
+
+        const chips = $$('.chip', chipsBar);
+
+        const markActive = id => {
+            chips.forEach(chip => {
+                const active = chip.dataset.open === id;
+                chip.classList.toggle('is-active', active);
+                if (active) {
+                    // centra el chip activo dentro de la barra (sin mover la página)
+                    const track = chip.parentElement;
+                    track.scrollTo({
+                        left: chip.offsetLeft - track.clientWidth / 2 + chip.offsetWidth / 2,
+                        behavior: reduceMotion ? 'auto' : 'smooth'
+                    });
+                }
+            });
+        };
+
+        const activeObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) markActive(entry.target.id);
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        fichas.forEach(f => activeObserver.observe(f));
+    }
+})();

@@ -31,11 +31,7 @@
 
     <main class="card">
 
-        <!-- =========================================
-             PORTADA
-             Foto completa (sin recorte) y texto debajo,
-             así el letrero se lee entero y nada lo tapa.
-        ========================================== -->
+        <!-- PORTADA -->
         <header class="hero">
 
             <figure class="hero__media">
@@ -69,11 +65,9 @@
         </header>
 
 
-        <!-- =========================================
-             CINTA DE MARCAS (se mueve sola, sentido contrario)
-        ========================================== -->
+        <!-- CINTA DE MARCAS -->
         <div class="ticker" data-marquee>
-            <p class="sr-only">Marcas: WEG, Nexans, Sylvania, Cestari, Soler &amp; Palau y AIRAL.</p>
+            <p class="sr-only">Marcas: WEG, Nexans, Sylvania, Cestari, Soler &amp; Palau, AIRAL, Eaton, Delta, Ferrara y Erasmus.</p>
             <ul class="ticker__track" data-marquee-track data-speed="30" aria-hidden="true">
                 <li class="ticker__item">WEG<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
                 <li class="ticker__item">Nexans<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
@@ -81,13 +75,15 @@
                 <li class="ticker__item">Cestari<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
                 <li class="ticker__item">Soler &amp; Palau<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
                 <li class="ticker__item">AIRAL<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">EATON<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">DELTA<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">FERRARA<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">ERASMUS<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
             </ul>
         </div>
 
 
-        <!-- =========================================
-             NUESTRO VALOR
-        ========================================== -->
+        <!-- NUESTRO VALOR -->
         <section class="section reveal" aria-labelledby="values-title">
 
             <div class="head">
@@ -143,9 +139,7 @@
         </section>
 
 
-        <!-- =========================================
-             PRODUCTOS: fila continua que se desplaza sola
-        ========================================== -->
+        <!-- PRODUCTOS -->
         <section class="section reveal" aria-labelledby="products-title">
 
             <div class="head">
@@ -156,8 +150,6 @@
                 </h2>
             </div>
 
-            <!-- Los nombres de archivo deben coincidir EXACTAMENTE
-                 (mayúsculas y extensión) con los de images/productos/ -->
             <div class="marquee" data-marquee>
                 <ul class="marquee__track" data-marquee-track>
 
@@ -214,7 +206,13 @@
                             <img src="images/productos/CCOMPRESOR.png" alt="Compresor industrial" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
                         </figure>
                         <h3 class="item__name">Compresores</h3>
-                        <!-- <span class="item__brand">Marca</span> -->
+                    </li>
+
+                    <li class="item">
+                        <figure class="item__img" data-fallback="PLCs">
+                            <img src="images/productos/CPLC.png" alt="Controladores lógicos programables (PLC)" width="400" height="300" onerror="this.parentNode.classList.add('is-missing')">
+                        </figure>
+                        <h3 class="item__name">PLCs</h3>
                     </li>
 
                 </ul>
@@ -232,9 +230,7 @@
         </section>
 
 
-        <!-- =========================================
-             CONTACTO (panel morado dentro de la tarjeta)
-        ========================================== -->
+        <!-- CONTACTO -->
         <section class="contact reveal" aria-labelledby="contact-title">
 
             <span class="deco-arc" aria-hidden="true"></span>
@@ -298,9 +294,7 @@
         </section>
 
 
-        <!-- =========================================
-             FOOTER
-        ========================================== -->
+        <!-- FOOTER -->
         <footer class="footer">
             <p>© <span id="current-year">2026</span> Imagen Eléctrica Ltda.</p>
             <p class="footer__sub">Todos los derechos reservados</p>

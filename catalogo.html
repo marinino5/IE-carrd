@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#f5f1f9">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Catálogo digital | Imagen Eléctrica</title>
+
+    <meta name="description" content="Catálogo digital de Imagen Eléctrica: motorreductores, motores, variadores, ventilación, iluminación, cables, compresores y PLCs.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,600..900&family=Manrope:wght@400;500;600;700;800&display=swap">
+
+    <!-- Base compartida con la tarjeta (colores, fondo, tipografía, botones) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body class="catalog-page">
+
+    <div class="page-bg" aria-hidden="true"></div>
+
+
+    <!-- Barra de accesos rápidos: aparece al bajar -->
+    <nav class="chips" aria-label="Ir a una línea" data-chips>
+        <div class="chips__track">
+            <a class="chip" href="#motorreductores" data-open="motorreductores">Motorreductores</a>
+            <a class="chip" href="#motores" data-open="motores">Motores eléctricos</a>
+            <a class="chip" href="#variadores" data-open="variadores">Variadores y arrancadores</a>
+            <a class="chip" href="#ventilacion" data-open="ventilacion">Ventilación industrial</a>
+            <a class="chip" href="#iluminacion" data-open="iluminacion">Iluminación industrial</a>
+            <a class="chip" href="#cables" data-open="cables">Cables industriales</a>
+            <a class="chip" href="#compresores" data-open="compresores">Compresores</a>
+            <a class="chip" href="#plcs" data-open="plcs">PLCs</a>
+        </div>
+    </nav>
+
+
+    <main class="card card--wide">
+
+        <!-- PORTADA DEL CATÁLOGO (data-selector: la barra de accesos aparece al salir de aquí) -->
+        <header class="cover" data-selector>
+
+            <span class="deco-arc" aria-hidden="true"></span>
+            <span class="deco-dots" aria-hidden="true"></span>
+
+            <a class="back" href="index.html">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
+                Volver al perfil
+            </a>
+
+            <div class="head">
+                <p class="label">Catálogo digital</p>
+                <h1 class="title">
+                    Imagen Eléctrica
+                    <span>Líneas de producto</span>
+                </h1>
+            </div>
+
+        </header>
+
+
+        <!-- Cinta de marcas (misma de la tarjeta) -->
+        <div class="ticker" data-marquee>
+            <p class="sr-only">Marcas: WEG, Nexans, Sylvania, Cestari, Soler &amp; Palau, AIRAL, Eaton, Delta, Ferrara y Erasmus.</p>
+            <ul class="ticker__track" data-marquee-track data-speed="30" aria-hidden="true">
+                <li class="ticker__item">WEG<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">Nexans<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">Sylvania<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">Cestari<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">Soler &amp; Palau<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">AIRAL<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">EATON<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">DELTA<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">FERRARA<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+                <li class="ticker__item">ERASMUS<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></li>
+            </ul>
+        </div>
+
+
+        <!-- FICHAS -->
+        <section class="fichas" aria-label="Fichas de producto">
+
+            <article class="ficha" id="motorreductores" data-ficha>
+
+                <div class="ficha__top">
+                    <figure class="ficha__media">
+                        <img src="images/productos/CREDUCTOR.png" alt="Motorreductores WEG-Cestari" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                    </figure>
+
+                    <div class="ficha__intro">
+                        <p class="ficha__meta">
+                            <span class="ficha__num">01<small> / 08</small></span>
+                            <span class="brand-pill">WEG-Cestari</span>
+                        </p>
+                        <h2 class="ficha__title" id="motorreductores-title">Motorreductores</h2>
+                        <p class="ficha__desc">Reducen la velocidad del motor y multiplican el torque para mover transportadores, mezcladores y máquinas de proceso.</p>
+                        <button class="ficha__toggle ripple" type="button" aria-expanded="false" aria-controls="motorreductores-panel" data-toggle>
+                            <span data-toggle-label>Ver detalles</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ficha__panel" id="motorreductores-panel" role="region" aria-labelledby="motorreductores-title" inert>
+                    <div class="ficha__inner">
+
+                        <section class="block">
+                            <h3 class="block__title">Tipos disponibles</h3>
+                            <ul class="types">
+                            <li><strong>Sinfín y corona</strong><span>Ejes a 90°, compactos y versátiles. Línea WCR con carcasa de aluminio o hierro fundido.</span></li>
+                            <li><strong>Helicoidales coaxiales</strong><span>Ejes en línea, buena relación potencia–tamaño para transportadores.</span></li>
+                            <li><strong>Helicoidales industriales</strong><span>Para cargas severas, con ejes paralelos u ortogonales.</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Características principales</h3>
+                            <dl class="specs">
+                            <div><dt>Potencia</dt><dd>0,5 a 50 HP</dd></div>
+                            <div><dt>Torque de salida</dt><dd>T (Nm) ≈ 7.121 × HP ÷ rpm de salida</dd></div>
+                            <div><dt>Ejemplo</dt><dd>1 HP a 100 rpm de salida ≈ 71 Nm</dd></div>
+                            <div><dt>Relación de transmisión</dt><dd>7,5 a 100</dd></div>
+                            <div><dt>Fijación</dt><dd>Carcasa, patas, brazo de torsión o brida</dd></div>
+                            <div><dt>Eje de salida</dt><dd>Macizo o hueco</dd></div>
+                            </dl>
+                            <p class="specs__note">El torque se calcula con la potencia en HP y las rpm de salida (sin considerar pérdidas por eficiencia). Confirma el valor final con un asesor.</p>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Dónde se utiliza</h3>
+                            <ul class="apps">
+                            <li>Transportadores</li>
+                            <li>Mezcladores y agitadores</li>
+                            <li>Elevadores</li>
+                            <li>Máquinas de empaque</li>
+                            <li>Equipos de proceso</li>
+                            </ul>
+                        </section>
+
+                        <div class="ficha__cta">
+                            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20motorreductores%20Cestari." target="_blank" rel="noopener noreferrer">
+                                <span class="wa-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                                </span>
+                                <span class="wa-btn__text">
+                                    <small>Asesoría por WhatsApp</small>
+                                    <strong>Consultar motorreductores Cestari</strong>
+                                </span>
+                                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+                            </a>
+                            <a class="next" href="#motores" data-open="motores"><small>Siguiente</small>Motores eléctricos <span aria-hidden="true">→</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="ficha" id="motores" data-ficha>
+
+                <div class="ficha__top">
+                    <figure class="ficha__media">
+                        <img src="images/productos/CMOTOR.png" alt="Motores eléctricos WEG" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                    </figure>
+
+                    <div class="ficha__intro">
+                        <p class="ficha__meta">
+                            <span class="ficha__num">02<small> / 08</small></span>
+                            <span class="brand-pill">WEG</span>
+                        </p>
+                        <h2 class="ficha__title" id="motores-title">Motores eléctricos</h2>
+                        <p class="ficha__desc">Motores trifásicos de inducción de alta eficiencia para accionar bombas, ventiladores, compresores y máquinas en general.</p>
+                        <button class="ficha__toggle ripple" type="button" aria-expanded="false" aria-controls="motores-panel" data-toggle>
+                            <span data-toggle-label>Ver detalles</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ficha__panel" id="motores-panel" role="region" aria-labelledby="motores-title" inert>
+                    <div class="ficha__inner">
+
+                        <section class="block">
+                            <h3 class="block__title">Tipos disponibles</h3>
+                            <ul class="types">
+                            <li><strong>Trifásicos</strong><span>Línea industrial de alta eficiencia W21 y W22.</span></li>
+                            <li><strong>Monofásicos</strong><span>Para equipos y máquinas con alimentación monofásica.</span></li>
+                            <li><strong>A prueba de explosión</strong><span>Para áreas con gases, vapores o polvos inflamables.</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Características principales</h3>
+                            <dl class="specs">
+                            <div><dt>Eficiencia</dt><dd>IE3, IE4 e IE5</dd></div>
+                            <div><dt>Protección</dt><dd>IP21 a IP67</dd></div>
+                            <div><dt>Potencia y tensión</dt><dd>0,5 a 500 HP · tensión según referencia</dd></div>
+                            <div><dt>Refrigeración</dt><dd>Totalmente cerrado con ventilación externa</dd></div>
+                            <div><dt>Carcasa</dt><dd>Hierro fundido</dd></div>
+                            <div><dt>Velocidad</dt><dd>2 polos ≈ 3.600 rpm<br>4 polos ≈ 1.800 rpm</dd></div>
+                            </dl>
+                            <p class="specs__note">Datos de las líneas trifásicas W21 y W22 según WEG. Consulta disponibilidad por referencia.</p>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Dónde se utiliza</h3>
+                            <ul class="apps">
+                            <li>Bombas</li>
+                            <li>Ventiladores</li>
+                            <li>Compresores</li>
+                            <li>Molinos</li>
+                            <li>Transportadores</li>
+                            </ul>
+                        </section>
+
+                        <div class="ficha__cta">
+                            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20motores%20el%C3%A9ctricos%20WEG." target="_blank" rel="noopener noreferrer">
+                                <span class="wa-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                                </span>
+                                <span class="wa-btn__text">
+                                    <small>Asesoría por WhatsApp</small>
+                                    <strong>Consultar motores eléctricos WEG</strong>
+                                </span>
+                                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+                            </a>
+                            <a class="next" href="#variadores" data-open="variadores"><small>Siguiente</small>Variadores y arrancadores <span aria-hidden="true">→</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="ficha" id="variadores" data-ficha>
+
+                <div class="ficha__top">
+                    <figure class="ficha__media">
+                        <img src="images/productos/CV&amp;A.png" alt="Variadores y arrancadores WEG" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                    </figure>
+
+                    <div class="ficha__intro">
+                        <p class="ficha__meta">
+                            <span class="ficha__num">03<small> / 08</small></span>
+                            <span class="brand-pill">WEG</span>
+                        </p>
+                        <h2 class="ficha__title" id="variadores-title">Variadores y arrancadores</h2>
+                        <p class="ficha__desc">Controlan el arranque y la velocidad de los motores para ahorrar energía, reducir golpes mecánicos y proteger el sistema.</p>
+                        <button class="ficha__toggle ripple" type="button" aria-expanded="false" aria-controls="variadores-panel" data-toggle>
+                            <span data-toggle-label>Ver detalles</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ficha__panel" id="variadores-panel" role="region" aria-labelledby="variadores-title" inert>
+                    <div class="ficha__inner">
+
+                        <section class="block">
+                            <h3 class="block__title">Tipos disponibles</h3>
+                            <ul class="types">
+                            <li><strong>Variadores de frecuencia</strong><span>Para propósito general y para máquinas pequeñas.</span></li>
+                            <li><strong>Arrancadores suaves</strong><span>Con bypass incorporado y protección integral del motor.</span></li>
+                            <li><strong>Controles y accesorios WEG</strong><span>Complementos para el mando y la protección de los motores.</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Características principales</h3>
+                            <dl class="specs">
+                            <div><dt>Potencia</dt><dd>Hasta 110 kW (150 HP)</dd></div>
+                            <div><dt>Control</dt><dd>Escalar V/f, vectorial sin sensor o con encoder</dd></div>
+                            <div><dt>Protección</dt><dd>IP20 · versión IP66 disponible</dd></div>
+                            <div><dt>Corriente (arrancadores)</dt><dd>17 a 412 A</dd></div>
+                            <div><dt>Tensión (arrancadores)</dt><dd>220 a 575 V</dd></div>
+                            <div><dt>Operación (arrancadores)</dt><dd>Hasta 55 °C sin reducción de corriente</dd></div>
+                            </dl>
+                            <p class="specs__note">Datos publicados por WEG y sus distribuidores.</p>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Dónde se utiliza</h3>
+                            <ul class="apps">
+                            <li>Bombas</li>
+                            <li>Ventiladores y extractores</li>
+                            <li>Transportadores</li>
+                            <li>Mezcladores</li>
+                            <li>Extrusoras</li>
+                            </ul>
+                        </section>
+
+                        <div class="ficha__cta">
+                            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20variadores%20y%20arrancadores%20WEG." target="_blank" rel="noopener noreferrer">
+                                <span class="wa-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                                </span>
+                                <span class="wa-btn__text">
+                                    <small>Asesoría por WhatsApp</small>
+                                    <strong>Consultar variadores y arrancadores WEG</strong>
+                                </span>
+                                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+                            </a>
+                            <a class="next" href="#ventilacion" data-open="ventilacion"><small>Siguiente</small>Ventilación industrial <span aria-hidden="true">→</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="ficha" id="ventilacion" data-ficha>
+
+                <div class="ficha__top">
+                    <figure class="ficha__media">
+                        <img src="images/productos/CVENT.png" alt="Ventilación industrial Soler &amp; Palau · AIRAL" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                    </figure>
+
+                    <div class="ficha__intro">
+                        <p class="ficha__meta">
+                            <span class="ficha__num">04<small> / 08</small></span>
+                            <span class="brand-pill">Soler &amp; Palau · AIRAL</span>
+                        </p>
+                        <h2 class="ficha__title" id="ventilacion-title">Ventilación industrial</h2>
+                        <p class="ficha__desc">Extractores y ventiladores para renovar el aire, controlar la temperatura y retirar humos o vapores de naves y procesos.</p>
+                        <button class="ficha__toggle ripple" type="button" aria-expanded="false" aria-controls="ventilacion-panel" data-toggle>
+                            <span data-toggle-label>Ver detalles</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ficha__panel" id="ventilacion-panel" role="region" aria-labelledby="ventilacion-title" inert>
+                    <div class="ficha__inner">
+
+                        <section class="block">
+                            <h3 class="block__title">Tipos disponibles</h3>
+                            <ul class="types">
+                            <li><strong>Tubo-axiales para ducto</strong><span>Carcasa tubular para manejo de aire en conductos (S&amp;P).</span></li>
+                            <li><strong>Axiales y extractores</strong><span>Ventilación de naves y galpones (AIRAL).</span></li>
+                            <li><strong>Centrífugos</strong><span>Mayor presión para sistemas con ductos largos o filtros.</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Características principales</h3>
+                            <dl class="specs">
+                            <div><dt>Diámetros</dt><dd>560 a 1.000 mm (línea TAT de S&amp;P)</dd></div>
+                            <div><dt>Construcción</dt><dd>Carcasa de acero y hélice de aluminio inyectado</dd></div>
+                            <div><dt>Motor</dt><dd>Fuera del paso del aire en la línea TAT</dd></div>
+                            <div><dt>Presión</dt><dd>Media, para ducto</dd></div>
+                            <div><dt>Certificación</dt><dd>Prestaciones certificadas AMCA en modelos TAT 630 a 1000</dd></div>
+                            <div><dt>Caudal</dt><dd>Según diámetro y modelo · consultar</dd></div>
+                            </dl>
+                            <p class="specs__note">Datos de la línea TAT de Soler &amp; Palau. En AIRAL la selección depende del espacio y del caudal requerido.</p>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Dónde se utiliza</h3>
+                            <ul class="apps">
+                            <li>Campanas extractoras</li>
+                            <li>Procesos industriales</li>
+                            <li>Cuartos de pintura</li>
+                            <li>Parqueaderos</li>
+                            <li>Sector pecuario y agrícola</li>
+                            </ul>
+                        </section>
+
+                        <div class="ficha__cta">
+                            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20ventilaci%C3%B3n%20industrial%20Soler%20%26%20Palau%20/%20AIRAL." target="_blank" rel="noopener noreferrer">
+                                <span class="wa-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                                </span>
+                                <span class="wa-btn__text">
+                                    <small>Asesoría por WhatsApp</small>
+                                    <strong>Consultar ventilación industrial Soler &amp; Palau / AIRAL</strong>
+                                </span>
+                                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+                            </a>
+                            <a class="next" href="#iluminacion" data-open="iluminacion"><small>Siguiente</small>Iluminación industrial <span aria-hidden="true">→</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="ficha" id="iluminacion" data-ficha>
+
+                <div class="ficha__top">
+                    <figure class="ficha__media">
+                        <img src="images/productos/CILUM.png" alt="Iluminación industrial Sylvania" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                    </figure>
+
+                    <div class="ficha__intro">
+                        <p class="ficha__meta">
+                            <span class="ficha__num">05<small> / 08</small></span>
+                            <span class="brand-pill">Sylvania</span>
+                        </p>
+                        <h2 class="ficha__title" id="iluminacion-title">Iluminación industrial</h2>
+                        <p class="ficha__desc">Luminarias LED para bodegas, plantas de producción y espacios exteriores, incluidas opciones solares.</p>
+                        <button class="ficha__toggle ripple" type="button" aria-expanded="false" aria-controls="iluminacion-panel" data-toggle>
+                            <span data-toggle-label>Ver detalles</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ficha__panel" id="iluminacion-panel" role="region" aria-labelledby="iluminacion-title" inert>
+                    <div class="ficha__inner">
+
+                        <section class="block">
+                            <h3 class="block__title">Tipos disponibles</h3>
+                            <ul class="types">
+                            <li><strong>LED industrial (Highbay)</strong><span>Campana colgante de alta eficacia para cubiertas altas.</span></li>
+                            <li><strong>Luminarias LED y fluorescentes</strong><span>Para interiores, oficinas y áreas de trabajo.</span></li>
+                            <li><strong>Luminaria solar</strong><span>Con panel solar incluido, sin conexión a la red.</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Características principales</h3>
+                            <dl class="specs">
+                            <div><dt>Potencia</dt><dd>30 W a 400 W</dd></div>
+                            <div><dt>Flujo luminoso</dt><dd>4.500 a 60.000 lm</dd></div>
+                            <div><dt>Eficacia</dt><dd>150 a 160 lm/W</dd></div>
+                            <div><dt>Temperatura de color</dt><dd>5.700 K</dd></div>
+                            <div><dt>Protección</dt><dd>IP65 / IK08</dd></div>
+                            <div><dt>Tensión</dt><dd>100 a 277 V · 50/60 Hz</dd></div>
+                            <div><dt>Regulación</dt><dd>0–10 V</dd></div>
+                            <div><dt>Vida útil</dt><dd>50.000 h (L70)</dd></div>
+                            </dl>
+                            <p class="specs__note">Flujo luminoso estimado según la eficacia de la línea LED Highbay de Sylvania Colombia. Confirma la ficha técnica de cada referencia.</p>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Dónde se utiliza</h3>
+                            <ul class="apps">
+                            <li>Bodegas</li>
+                            <li>Hangares</li>
+                            <li>Plantas de producción</li>
+                            <li>Escenarios deportivos</li>
+                            <li>Zonas logísticas</li>
+                            </ul>
+                        </section>
+
+                        <div class="ficha__cta">
+                            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20iluminaci%C3%B3n%20industrial%20Sylvania." target="_blank" rel="noopener noreferrer">
+                                <span class="wa-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                                </span>
+                                <span class="wa-btn__text">
+                                    <small>Asesoría por WhatsApp</small>
+                                    <strong>Consultar iluminación industrial Sylvania</strong>
+                                </span>
+                                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+                            </a>
+                            <a class="next" href="#cables" data-open="cables"><small>Siguiente</small>Cables industriales <span aria-hidden="true">→</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="ficha" id="cables" data-ficha>
+
+                <div class="ficha__top">
+                    <figure class="ficha__media">
+                        <img src="images/productos/CCABLE.png" alt="Cables industriales CENTELSA by Nexans" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                    </figure>
+
+                    <div class="ficha__intro">
+                        <p class="ficha__meta">
+                            <span class="ficha__num">06<small> / 08</small></span>
+                            <span class="brand-pill">CENTELSA by Nexans</span>
+                        </p>
+                        <h2 class="ficha__title" id="cables-title">Cables industriales</h2>
+                        <p class="ficha__desc">Conductores de cobre para alimentadores, circuitos ramales y redes interiores en instalaciones industriales y comerciales.</p>
+                        <button class="ficha__toggle ripple" type="button" aria-expanded="false" aria-controls="cables-panel" data-toggle>
+                            <span data-toggle-label>Ver detalles</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ficha__panel" id="cables-panel" role="region" aria-labelledby="cables-title" inert>
+                    <div class="ficha__inner">
+
+                        <section class="block">
+                            <h3 class="block__title">Tipos disponibles</h3>
+                            <ul class="types">
+                            <li><strong>Alambre THHN/THWN-2</strong><span>Conductor sólido de cobre.</span></li>
+                            <li><strong>Cable THHN/THWN-2</strong><span>Conductor cableado, versión extradeslizable.</span></li>
+                            <li><strong>Otras construcciones</strong><span>Consultar según la aplicación.</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Características principales</h3>
+                            <dl class="specs">
+                            <div><dt>Conductor</dt><dd>Cobre</dd></div>
+                            <div><dt>Aislamiento</dt><dd>Termoplástico con chaqueta de nylon</dd></div>
+                            <div><dt>Tensión</dt><dd>600 V</dd></div>
+                            <div><dt>Temperatura</dt><dd>90 °C en sitios secos, húmedos y mojados</dd></div>
+                            <div><dt>Calibres</dt><dd>Desde 18 AWG hasta 350 kcmil</dd></div>
+                            <div><dt>Propiedades</dt><dd>Retardante a la llama (VW-1), resistente a rayos solares, RoHS</dd></div>
+                            </dl>
+                            <p class="specs__note">Datos del catálogo THHN/THWN-2 de CENTELSA by Nexans. Instalación según RETIE.</p>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Dónde se utiliza</h3>
+                            <ul class="apps">
+                            <li>Alimentadores</li>
+                            <li>Circuitos ramales</li>
+                            <li>Tableros</li>
+                            <li>Bandejas portacables</li>
+                            <li>Zonas con aceites y grasas</li>
+                            </ul>
+                        </section>
+
+                        <div class="ficha__cta">
+                            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20cables%20industriales%20Nexans." target="_blank" rel="noopener noreferrer">
+                                <span class="wa-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                                </span>
+                                <span class="wa-btn__text">
+                                    <small>Asesoría por WhatsApp</small>
+                                    <strong>Consultar cables industriales Nexans</strong>
+                                </span>
+                                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+                            </a>
+                            <a class="next" href="#compresores" data-open="compresores"><small>Siguiente</small>Compresores <span aria-hidden="true">→</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="ficha" id="compresores" data-ficha>
+
+                <div class="ficha__top">
+                    <figure class="ficha__media">
+                        <img src="images/productos/CCOMPRESOR.png" alt="Compresores" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                    </figure>
+
+                    <div class="ficha__intro">
+                        <p class="ficha__meta">
+                            <span class="ficha__num">07<small> / 08</small></span>
+                            
+                        </p>
+                        <h2 class="ficha__title" id="compresores-title">Compresores</h2>
+                        <p class="ficha__desc">Equipos de aire comprimido para herramientas neumáticas, líneas de producción y talleres.</p>
+                        <button class="ficha__toggle ripple" type="button" aria-expanded="false" aria-controls="compresores-panel" data-toggle>
+                            <span data-toggle-label>Ver detalles</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ficha__panel" id="compresores-panel" role="region" aria-labelledby="compresores-title" inert>
+                    <div class="ficha__inner">
+
+                        <section class="block">
+                            <h3 class="block__title">Tipos disponibles</h3>
+                            <ul class="types">
+                            <li><strong>De pistón</strong><span>Con tanque, para uso intermitente en talleres y producción.</span></li>
+                            <li><strong>De tornillo</strong><span>Para trabajo continuo y mayor demanda de aire.</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Características principales</h3>
+                            <dl class="specs">
+                            <div><dt>Caudal</dt><dd>Según equipo · consultar</dd></div>
+                            <div><dt>Presión de trabajo</dt><dd>Según equipo · consultar</dd></div>
+                            <div><dt>Potencia del motor</dt><dd>Según equipo · consultar</dd></div>
+                            <div><dt>Capacidad del tanque</dt><dd>Según equipo · consultar</dd></div>
+                            <div><dt>Alimentación</dt><dd>Monofásica o trifásica según modelo</dd></div>
+                            </dl>
+                            <p class="specs__note">Imagen Eléctrica te orienta en la selección según el consumo de aire de tus equipos.</p>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Dónde se utiliza</h3>
+                            <ul class="apps">
+                            <li>Herramientas neumáticas</li>
+                            <li>Pintura</li>
+                            <li>Limpieza y soplado</li>
+                            <li>Talleres</li>
+                            <li>Automatización neumática</li>
+                            </ul>
+                        </section>
+
+                        <div class="ficha__cta">
+                            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20compresores." target="_blank" rel="noopener noreferrer">
+                                <span class="wa-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                                </span>
+                                <span class="wa-btn__text">
+                                    <small>Asesoría por WhatsApp</small>
+                                    <strong>Consultar compresores</strong>
+                                </span>
+                                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+                            </a>
+                            <a class="next" href="#plcs" data-open="plcs"><small>Siguiente</small>PLCs <span aria-hidden="true">→</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="ficha" id="plcs" data-ficha>
+
+                <div class="ficha__top">
+                    <figure class="ficha__media">
+                        <img src="images/productos/CPLC.png" alt="Controladores lógicos programables (PLC)" width="400" height="300" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                    </figure>
+
+                    <div class="ficha__intro">
+                        <p class="ficha__meta">
+                            <span class="ficha__num">08<small> / 08</small></span>
+                            
+                        </p>
+                        <h2 class="ficha__title" id="plcs-title">PLCs</h2>
+                        <p class="ficha__desc">Controladores lógicos programables para automatizar máquinas y procesos industriales con lógica confiable y flexible.</p>
+                        <button class="ficha__toggle ripple" type="button" aria-expanded="false" aria-controls="plcs-panel" data-toggle>
+                            <span data-toggle-label>Ver detalles</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ficha__panel" id="plcs-panel" role="region" aria-labelledby="plcs-title" inert>
+                    <div class="ficha__inner">
+
+                        <section class="block">
+                            <h3 class="block__title">Tipos disponibles</h3>
+                            <ul class="types">
+                            <li><strong>PLC compactos</strong><span>Entradas y salidas integradas para máquinas y aplicaciones pequeñas.</span></li>
+                            <li><strong>PLC modulares</strong><span>Configurables y ampliables para procesos de mayor tamaño.</span></li>
+                            <li><strong>Módulos de expansión</strong><span>Entradas y salidas digitales y analógicas adicionales.</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Características principales</h3>
+                            <dl class="specs">
+                            <div><dt>Entradas y salidas</dt><dd>Digitales y analógicas según modelo</dd></div>
+                            <div><dt>Comunicación</dt><dd>Ethernet, Modbus y otros protocolos según modelo</dd></div>
+                            <div><dt>Programación</dt><dd>Lenguajes IEC 61131-3 (ladder, bloques, texto estructurado)</dd></div>
+                            <div><dt>Alimentación</dt><dd>24 Vdc típica · consultar</dd></div>
+                            <div><dt>Ampliación</dt><dd>Módulos de expansión según referencia</dd></div>
+                            <div><dt>Referencias y marcas</dt><dd>Consultar disponibilidad</dd></div>
+                            </dl>
+                            <p class="specs__note">Especificaciones de referencia. Imagen Eléctrica te orienta en la selección según el número de señales y la aplicación.</p>
+                        </section>
+
+                        <section class="block">
+                            <h3 class="block__title">Dónde se utiliza</h3>
+                            <ul class="apps">
+                            <li>Automatización de máquinas</li>
+                            <li>Líneas de producción</li>
+                            <li>Control de procesos</li>
+                            <li>Bombeo y tratamiento de agua</li>
+                            <li>Monitoreo y supervisión</li>
+                            </ul>
+                        </section>
+
+                        <div class="ficha__cta">
+                            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20PLCs." target="_blank" rel="noopener noreferrer">
+                                <span class="wa-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                                </span>
+                                <span class="wa-btn__text">
+                                    <small>Asesoría por WhatsApp</small>
+                                    <strong>Consultar PLCs</strong>
+                                </span>
+                                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+                            </a>
+                            <a class="next" href="#cierre">Ir al cierre <span aria-hidden="true">→</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+            <p class="disclaimer">
+                Información de referencia tomada de catálogos y fichas de los fabricantes.
+                Las especificaciones finales dependen de cada referencia; confirma disponibilidad con un asesor.
+            </p>
+
+        </section>
+
+
+        <!-- CIERRE -->
+        <section class="contact closing" id="cierre" aria-labelledby="closing-title">
+
+            <span class="deco-arc" aria-hidden="true"></span>
+            <span class="deco-dots" aria-hidden="true"></span>
+
+            <div class="head head--light">
+                <p class="label">Asesoría</p>
+                <h2 id="closing-title" class="title">
+                    ¿No encontraste
+                    <span>lo que necesitas?</span>
+                </h2>
+
+                <p class="closing__text">
+                    Imagen Eléctrica maneja más referencias y marcas de las que aparecen aquí.
+                    Cuéntanos tu aplicación y te orientamos en la selección.
+                </p>
+            </div>
+
+
+            <ul class="closing__more" aria-label="Otras líneas">
+                <li>Medición</li>
+                <li>Tableros eléctricos</li>
+                <li>Aires acondicionados York</li>
+                <li>Material eléctrico</li>
+            </ul>
+
+            <a class="wa-btn ripple" href="https://wa.me/573168219758?text=Hola%2C%20estoy%20consultando%20el%20cat%C3%A1logo%20digital%20de%20Imagen%20El%C3%A9ctrica%20y%20quisiera%20hablar%20con%20un%20asesor." target="_blank" rel="noopener noreferrer">
+                <span class="wa-btn__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" /><path d="M9 8.5c.5 2.5 2 4 4.5 5" /></svg>
+                </span>
+                <span class="wa-btn__text">
+                    <small>Respuesta directa</small>
+                    <strong>Hablar con un asesor</strong>
+                </span>
+                <span class="wa-btn__arrow" aria-hidden="true">→</span>
+            </a>
+
+        </section>
+
+
+        <footer class="footer footer--catalog">
+            <a class="back" href="index.html">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
+                Volver al perfil
+            </a>
+            <p>© <span id="current-year">2026</span> Imagen Eléctrica Ltda.</p>
+            <p class="footer__sub">Todos los derechos reservados</p>
+        </footer>
+
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/catalogo.js"></script>
+
+</body>
+
+</html>

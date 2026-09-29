@@ -1353,3 +1353,718 @@ svg {
         translate: none;
     }
 }
+/* ==========================================================
+   IMAGEN ELÉCTRICA · CATÁLOGO DIGITAL
+   Se carga DESPUÉS de styles.css y reutiliza sus colores,
+   fondo, tipografía, cabeceras, arco/puntos y botón de WhatsApp.
+   Aquí solo va lo propio del catálogo.
+========================================================== */
+
+.card--wide {
+    --card-w: 820px;
+    --pad: 36px;
+}
+
+
+/* ==========================================
+   PORTADA
+========================================== */
+
+.cover {
+    position: relative;
+    overflow: hidden;
+    padding: 26px var(--pad) 30px;
+    background:
+        radial-gradient(60% 80% at 100% 0%, rgba(255, 116, 23, .08), transparent 70%),
+        radial-gradient(50% 70% at 0% 100%, rgba(106, 79, 166, .08), transparent 70%);
+}
+
+.cover > :not(.deco-arc):not(.deco-dots) {
+    position: relative;
+    z-index: 1;
+}
+
+.cover .deco-arc {
+    top: -80px;
+    left: auto;
+    right: -80px;
+    width: 190px;
+    height: 190px;
+    border-width: 16px;
+}
+
+.cover .deco-dots {
+    top: 64px;
+    left: 26px;
+    right: auto;
+    width: 41px;
+    height: 41px;
+}
+
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px 8px 10px;
+    border-radius: 999px;
+    font-size: .74rem;
+    font-weight: 700;
+    color: var(--purple);
+    background: var(--lilac-50);
+    border: 1px solid var(--line);
+    transition: background .2s ease, transform .25s var(--ease);
+}
+
+.back:hover {
+    background: var(--lilac-100);
+    transform: translateX(-2px);
+}
+
+.back svg {
+    width: 16px;
+    height: 16px;
+}
+
+.cover .head {
+    margin-top: 26px;
+}
+
+.cover .title {
+    font-size: 2.6rem;
+}
+
+.cover__lead {
+    max-width: 48ch;
+    margin: 14px auto 0;
+    text-align: center;
+    font-size: .92rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+
+/* ==========================================
+   SELECTOR DE LÍNEAS (solo texto: las imágenes
+   aparecen una sola vez, en cada ficha)
+========================================== */
+
+.selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 660px;
+    margin: 24px auto 0;
+}
+
+.pick {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px 7px 7px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--purple-dark);
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 16px -14px rgba(42, 29, 66, .5);
+    transition:
+        transform .25s var(--ease),
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.pick__num {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-stretch: 80%;
+    font-size: .74rem;
+    font-weight: 800;
+    color: var(--orange);
+    background: #fff3ea;
+    transition: color .2s ease, background .2s ease;
+}
+
+.pick:hover {
+    transform: translateY(-2px);
+    color: #fff;
+    background: var(--purple);
+    border-color: var(--purple);
+}
+
+.pick:hover .pick__num {
+    color: #fff;
+    background: var(--orange);
+}
+
+
+/* ==========================================
+   BARRA DE ACCESOS RÁPIDOS (fija arriba)
+========================================== */
+
+.chips {
+    position: fixed;
+    z-index: 15;
+    top: calc(12px + env(safe-area-inset-top, 0px));
+    left: 50%;
+    width: min(820px, calc(100% - 28px));
+    padding: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .88);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(67, 48, 106, .12);
+    box-shadow: 0 14px 30px -16px rgba(42, 29, 66, .45);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -16px);
+    transition: opacity .3s ease, transform .35s var(--ease);
+}
+
+.chips.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+.chips__track {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.chips__track::-webkit-scrollbar {
+    display: none;
+}
+
+.chip {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--muted);
+    transition: background .2s ease, color .2s ease;
+}
+
+.chip:hover {
+    color: var(--purple);
+    background: var(--lilac-50);
+}
+
+.chip.is-active {
+    color: #fff;
+    background: var(--purple);
+}
+
+
+/* ==========================================
+   FICHAS
+========================================== */
+
+.fichas {
+    display: grid;
+    gap: 14px;
+    padding: 30px var(--pad) 0;
+}
+
+.ficha {
+    scroll-margin-top: 80px;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: 0 14px 28px -22px rgba(42, 29, 66, .45);
+    transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.ficha.is-open {
+    border-color: rgba(255, 116, 23, .45);
+    box-shadow: 0 24px 44px -26px rgba(42, 29, 66, .55);
+}
+
+.ficha__top {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+    gap: 22px;
+    padding: 16px;
+    transition: grid-template-columns .45s var(--ease);
+}
+
+/* imagen más grande al abrir la ficha */
+.ficha.is-open .ficha__top {
+    grid-template-columns: 300px 1fr;
+}
+
+.ficha__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--lilac-50);
+}
+
+.ficha__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ficha__media.is-missing img {
+    display: none;
+}
+
+.ficha,
+.ficha__intro {
+    min-width: 0;
+}
+
+.ficha__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.ficha__num {
+    font-family: var(--font-display);
+    font-stretch: 80%;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--orange);
+}
+
+.ficha__num small {
+    font-size: .75em;
+    color: var(--faint);
+}
+
+.brand-pill {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: .66rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    color: var(--purple);
+    background: var(--lilac-100);
+}
+
+.ficha__title {
+    margin-top: 6px;
+    font-family: var(--font-display);
+    font-stretch: 74%;
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: .98;
+    text-transform: uppercase;
+    color: var(--purple-dark);
+}
+
+.ficha__desc {
+    margin-top: 8px;
+    font-size: .84rem;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+.ficha__toggle {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 10px 14px 10px 18px;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 800;
+    color: #fff;
+    background: var(--purple);
+    transition: background .2s ease;
+}
+
+.ficha__toggle:hover {
+    background: var(--violet-700);
+}
+
+.ficha__toggle svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.2;
+    transition: transform .35s var(--ease);
+}
+
+.ficha.is-open .ficha__toggle {
+    color: var(--purple);
+    background: var(--lilac-100);
+}
+
+.ficha.is-open .ficha__toggle svg {
+    transform: rotate(180deg);
+}
+
+/* panel desplegable (anima la altura sin JS) */
+.ficha__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .5s var(--ease);
+}
+
+.ficha.is-open .ficha__panel {
+    grid-template-rows: 1fr;
+}
+
+.ficha__inner {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 22px;
+    padding: 0 20px;
+}
+
+.ficha.is-open .ficha__inner {
+    padding-bottom: 20px;
+}
+
+.block {
+    padding-top: 18px;
+    border-top: 1px dashed var(--line);
+}
+
+.block:nth-child(2) {
+    grid-row: span 2;
+}
+
+.block__title {
+    margin-bottom: 12px;
+    font-size: .66rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+/* tipos */
+.types {
+    display: grid;
+    gap: 8px;
+}
+
+.types li {
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--lilac-50);
+    border-left: 3px solid var(--purple-mid);
+}
+
+.types strong {
+    display: block;
+    font-size: .8rem;
+    font-weight: 800;
+    color: var(--purple-dark);
+}
+
+.types span {
+    display: block;
+    margin-top: 2px;
+    font-size: .74rem;
+    line-height: 1.45;
+    color: var(--muted);
+}
+
+/* especificaciones */
+.specs div {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.specs div:first-child {
+    padding-top: 0;
+}
+
+.specs dt {
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.specs dd {
+    font-size: .78rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--purple-dark);
+}
+
+.specs__note {
+    margin-top: 10px;
+    font-size: .68rem;
+    line-height: 1.5;
+    color: var(--faint);
+}
+
+/* aplicaciones */
+.apps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-bottom: 4px;
+}
+
+.apps li {
+    padding: 6px 11px;
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--orange-text);
+    background: #fff3ea;
+}
+
+/* asesoría + siguiente */
+.ficha__cta {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--purple) 0%, var(--violet-700) 100%);
+}
+
+.ficha__cta .wa-btn {
+    margin-top: 0;
+}
+
+/* el texto del botón puede ocupar dos líneas (nombres largos) */
+.ficha__cta .wa-btn__text strong {
+    white-space: normal;
+    line-height: 1.2;
+}
+
+.next {
+    display: block;
+    padding: 6px 4px;
+    font-size: .82rem;
+    font-weight: 800;
+    text-align: right;
+    color: #fff;
+}
+
+.next small {
+    display: block;
+    margin-bottom: 2px;
+    font-size: .64rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .6);
+}
+
+.next span {
+    color: var(--orange-pale);
+}
+
+.disclaimer {
+    padding: 4px 4px 0;
+    text-align: center;
+    font-size: .7rem;
+    line-height: 1.55;
+    color: var(--faint);
+}
+
+
+/* ==========================================
+   CIERRE
+========================================== */
+
+.closing .head {
+    margin-bottom: 0;
+}
+
+.closing__text {
+    max-width: 44ch;
+    margin: 12px auto 0;
+    text-align: center;
+    font-size: .88rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, .75);
+}
+
+.closing__more {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 18px;
+}
+
+.closing__more li {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .88);
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .12);
+}
+
+.closing .wa-btn {
+    max-width: 420px;
+    margin: 20px auto 0;
+}
+
+.footer--catalog .back {
+    margin-bottom: 12px;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 760px) {
+    .card--wide {
+        --pad: 22px;
+    }
+
+    .ficha__top,
+    .ficha.is-open .ficha__top {
+        grid-template-columns: 170px 1fr;
+    }
+
+    .ficha__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .block:nth-child(2) {
+        grid-row: auto;
+    }
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 560px) {
+    .card--wide {
+        --pad: 16px;
+    }
+
+    .cover {
+        padding-top: 20px;
+    }
+
+    .cover .title {
+        font-size: 2rem;
+    }
+
+    .cover__lead {
+        font-size: .86rem;
+    }
+
+    /* dos columnas parejas en celular */
+    .selector {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-top: 20px;
+    }
+
+    .pick {
+        gap: 7px;
+        padding: 6px 10px 6px 6px;
+        border-radius: 14px;
+        font-size: .72rem;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .pick__num {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* la séptima ocupa todo el ancho para no dejar un hueco */
+    .pick:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        padding-right: 16px;
+    }
+
+    .closing__more li {
+        font-size: .66rem;
+    }
+
+    .fichas {
+        padding-top: 22px;
+        gap: 12px;
+    }
+
+    /* ficha cerrada: imagen pequeña a la izquierda */
+    .ficha__top {
+        grid-template-columns: 88px 1fr;
+        align-items: start;
+        gap: 14px;
+        padding: 12px;
+    }
+
+    /* ficha abierta: imagen grande arriba */
+    .ficha.is-open .ficha__top {
+        grid-template-columns: 1fr;
+    }
+
+    .ficha__title {
+        font-size: 1.15rem;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    .ficha__desc {
+        font-size: .78rem;
+    }
+
+    .ficha__toggle {
+        margin-top: 10px;
+        padding: 8px 12px 8px 14px;
+        font-size: .74rem;
+    }
+
+    .ficha__inner {
+        padding: 0 12px;
+    }
+
+    .ficha.is-open .ficha__inner {
+        padding-bottom: 12px;
+    }
+
+    .ficha__cta {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .next {
+        text-align: left;
+        padding: 2px 4px;
+    }
+
+    .ficha__cta .wa-btn__text strong {
+        font-size: .86rem;
+    }
+
+    .chips {
+        top: calc(8px + env(safe-area-inset-top, 0px));
+    }
+}
